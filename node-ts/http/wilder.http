@@ -1,0 +1,21 @@
+GET http://localhost:5000/api/wilder
+
+###
+POST http://localhost:5000/api/wilder
+Content-Type: application/json
+
+{
+    "name": "HTTP Typescript Wider"
+}
+
+###
+
+PUT http://localhost:5000/api/wilder
+Content-Type: application/json
+
+{
+    "id": 1,
+    "newWilder": {
+        "name": "Updated Wilder"
+    }
+}

@@ -1,0 +1,24 @@
+services:
+  front:
+    build: ./wild-book-ts
+    volumes:
+      - ./wild-book-ts/src:/app/src
+    ports:
+      - 3000:3000
+  api:
+    build: ./node-ts
+    volumes:
+      - ./node-ts/src:/app/src
+    ports:
+      - 5000:5000
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: changemeinprodplease
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
